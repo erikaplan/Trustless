@@ -1,4 +1,4 @@
-pragma solidity ^0.4.13;
+pragma solidity >=0.4.25;
 contract AdRequest {
     // Represents an Instagram influencer
     struct Influencer {
@@ -22,7 +22,7 @@ contract AdRequest {
     Image image;
     uint MIN_DEADLINE = 3 days;
 
-    constructor(string handle, string caption, uint deadline) 
+    constructor(string memory handle, string memory caption, uint deadline) 
         public 
         payable
     {
@@ -38,7 +38,7 @@ contract AdRequest {
     }
 
     function getInfluencerHandle() 
-        public view returns (string)
+        public view returns (string memory)
     {
         return influencer.instagramHandle;
     }
@@ -56,7 +56,7 @@ contract AdRequest {
     }
 
     function getCaption() 
-        public view returns (string)
+        public view returns (string memory)
     {
         return image.caption;
     }
